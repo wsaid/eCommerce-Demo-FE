@@ -55,7 +55,7 @@ export function useCart() {
       });
 
       cart.value = response.data.data;
-      storeCredit.value = response.data.storeCredit;
+      storeCredit.value = response.data.store_credit;
     } catch (error) {
       console.error('Error fetching items:', error);
     }
