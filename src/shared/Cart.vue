@@ -15,12 +15,12 @@ export function useCart() {
 
     try {
 
-      const response = await axios.post('/cart/1', {
+      const response = await axios.post('/cart', {
         item_id: item.id,
         quantity: item.quantity
       });
 
-      if (response.data.id) {
+      if (response.status === 201 || response.status === 200) {
         getCart();
       }
 
@@ -50,7 +50,7 @@ export function useCart() {
 
   const getCart = async () => {
     try {
-      const response = await axios.get('/cart/1', {
+      const response = await axios.get('/cart', {
         'Content-Type': 'application/json'
       });
 
