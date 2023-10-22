@@ -75,9 +75,14 @@
 </template>
   
 <script setup>
-import { computed } from 'vue';
+import { computed, onMounted } from 'vue';
 import { useCart } from '../shared/Cart.vue';
 
-const { cart, updateCart, removeFromCart } = useCart();
+const { cart, getCart, updateCart, removeFromCart } = useCart();
 let cartTotal = computed(() => cart.value.reduce((total, item) => total + item.price * item.quantity, 0))
+
+onMounted(() => {
+  getCart();
+})
+
 </script>
