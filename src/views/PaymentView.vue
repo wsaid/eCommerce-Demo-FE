@@ -53,7 +53,7 @@ export default {
             formErrors.value = {};
 
             try {
-                const response = await axios.post('/place-order/1', {
+                const response = await axios.post('/place-order', {
                     address: address.value,
                     phone: phone.value,
                     order_total: 100
