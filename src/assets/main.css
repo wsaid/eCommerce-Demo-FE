@@ -26,13 +26,34 @@ a,
 
 @media (min-width: 1024px) {
   body {
-    display: flex;
-    place-items: center;
+    /* display: flex; */
+    /* place-items: center; */
   }
 
   #app {
-    display: grid;
+    /* display: grid; */
     grid-template-columns: 1fr 1fr;
     padding: 0 2rem;
   }
+}
+
+nav > button:disabled, nav > button[disabled] {
+  background-color: beige;
+}
+
+.btn-circle {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  position: absolute;
+  top: -5px;
+  right: -15px;
+  background-color: #a7c397;
+  color: #000;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
