@@ -9,7 +9,14 @@
             <!-- Logo -->
             <div class="ml-4 flex lg:ml-0">
               <a href="#">
-                <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" />
+                <svg class="h-8 w-auto text-red-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
+                  stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" />
+                  <path
+                    d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3" />
+                  <path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3" />
+                  <circle cx="15" cy="9" r="1" />
+                </svg>
               </a>
             </div>
 
@@ -55,12 +62,12 @@
 </template>
 
 <script setup>
-  import IconWallet from './icons/IconWallet.vue';
-  import { useCart } from '../shared/Cart.vue';
+import IconWallet from './icons/IconWallet.vue';
+import { useCart } from '../shared/Cart.vue';
 
-  const { storeCredit, getCartCount } = useCart();
+const { storeCredit, getCartCount } = useCart();
 
-  // const itemsCount = computed(() => cart.value.reduce((total, item) => total + parseInt(item.quantity), 0))
+// const itemsCount = computed(() => cart.value.reduce((total, item) => total + parseInt(item.quantity), 0))
 
 </script>
 
