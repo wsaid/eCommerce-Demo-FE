@@ -75,6 +75,7 @@ export default {
                 if (error.response && error.response.status === 422) {
                     formErrors.value = error.response.data.errors;
                 } else {
+                    router.push('/payment-fail');
                     console.log(error)
                 }
             }

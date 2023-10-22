@@ -15,3 +15,17 @@
       </div>
     </main>
   </template>
+
+<script setup>
+import { onMounted } from 'vue'
+import { useCart } from '../shared/Cart.vue';
+
+const { getCart } = useCart();
+
+
+
+onMounted(() => {
+  getCart();
+})
+
+</script>
