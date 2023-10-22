@@ -6,9 +6,13 @@
       <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
         <!-- Item Listing -->
         <span v-for="item in items.data" :key="item.id" :href="item.href" class="group">
-          <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+          <div
+            class="container aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
             <img src="@/assets/noimg.jpg" alt="No image"
               class="h-full w-full object-cover object-center group-hover:opacity-75" />
+            <div class="overlay px-2 mx-2">
+              <p>{{ item.description }}</p>
+            </div>
           </div>
           <h3 class="mt-4 text-sm text-gray-700">{{ item.name }}</h3>
           <p class="mt-1 text-lg font-medium text-gray-900">{{ item.price }}</p>
@@ -78,5 +82,33 @@ onMounted(() => {
 <style scoped>
 input {
   width: 50px;
+}
+
+.container {
+  position: relative;
+  /* width: 300px; */
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.overlay {
+
+  position: absolute;
+  max-height: 48px;
+  bottom: 0px;
+  /* background-color: rgba(241, 237, 237, 0.7);
+  color: rgba(241, 237, 237, 0.7); */
+  background-color:  rgba(241, 237, 237, 0.7);
+  color: #333;
+  transition: bottom 0.5s;
+}
+
+.overlay:hover {
+  background-color:  rgba(241, 237, 237, 0.7);
+  color: #333;
 }
 </style>
